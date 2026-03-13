@@ -1,0 +1,101 @@
+#argas-panel-ui {
+  position: fixed;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid #999;
+  border-radius: 12px;
+  padding: 9px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+
+#interface.theme-dark ~ #argas-panel-ui {
+  background: var(--color-cool-5-75);
+}
+
+.argas-panel-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Buttons: immer helles Erscheinungsbild (= Anwendungen hell),
+   unabhängig von body.theme-* ("Anwendungen"-Einstellung).
+   Werte stammen aus Foundry's body.theme-light-Regel. */
+.argas-panel-button {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  padding: 0;
+  line-height: 32px;
+  box-sizing: border-box;
+  font-size: 20px;
+  background: rgba(0, 0, 0, 0.1);
+  border-color: #555;
+  color: #111;
+}
+
+.argas-panel-button:hover {
+  background: #c9593f;
+  color: #f7f3e8;
+}
+
+/* Nur bei dunkler Oberfläche ("Oberfläche"-Einstellung):
+   Werte stammen aus Foundry's Default-Button-Regel. */
+#interface.theme-dark ~ #argas-panel-ui .argas-panel-button {
+  background: rgba(11, 10, 19, 0.5);
+  border-color: #9f8475;
+  color: #e7d1b1;
+}
+
+#interface.theme-dark ~ #argas-panel-ui .argas-panel-button:hover {
+  background: #c9593f;
+  color: #f7f3e8;
+}
+
+.argas-panel-icon {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+/* Dock-Vorschau: leichtes Wackeln zeigt an, dass Andocken möglich ist */
+.argas-panel-dock-preview {
+  animation: argas-panel-jiggle 0.25s infinite;
+  opacity: 0.85;
+}
+
+@keyframes argas-panel-jiggle {
+  0%, 100% { translate: 0 0; }
+  20%      { translate: -2px 1px; }
+  40%      { translate: 2px -1px; }
+  60%      { translate: -1px -2px; }
+  80%      { translate: 1px 2px; }
+}
+
+/* Kompakt-Ansicht: Wrapper-Div (Positionierung + faded-ui),
+   nur im kollabierten Zustand sichtbar. */
+#argas-panel-collapse-icon {
+  position: fixed;
+  z-index: 100;
+  cursor: grab;
+  user-select: none;
+  display: none;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
+}
+
+#argas-panel-collapse-icon:active {
+  cursor: grabbing;
+}
+
+#argas-panel-collapse-icon:hover {
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.7));
+}
+
+#argas-panel-collapse-icon.argas-panel-dock-preview {
+  animation: argas-panel-jiggle 0.25s infinite;
+  opacity: 0.85;
+}

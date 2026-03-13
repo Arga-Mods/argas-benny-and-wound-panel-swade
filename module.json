@@ -1,0 +1,43 @@
+{
+    "id": "argas-benny-and-wound-panel-swade",
+    "title": "Arga's Benny & Wound Panel",
+    "description": "Overlay panel for quick adjustment of Bennies, Wounds, and Fatigue on selected tokens. Designed for Savage Worlds.",
+    "version": "13.0.1",
+    "authors": [
+        {
+            "name": "Arga"
+        }
+    ],
+    "compatibility": {
+        "minimum": "13",
+        "verified": "13",
+        "maximum": "13"
+    },
+    "relationships": {
+        "systems": [
+            {
+                "id": "swade",
+                "type": "system"
+            }
+        ]
+    },
+    "esmodules": [
+        "scripts/settings.js",
+        "scripts/panel.js"
+    ],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "languages/en.json"
+        },
+        {
+            "lang": "de",
+            "name": "Deutsch",
+            "path": "languages/de.json"
+        }
+    ],
+    "styles": [
+        "styles/style.css"
+    ]
+}
