@@ -10,8 +10,7 @@
     ],
     "compatibility": {
         "minimum": "13",
-        "verified": "13",
-        "maximum": "13"
+        "verified": "13"
     },
     "relationships": {
         "systems": [
@@ -21,6 +20,8 @@
             }
         ]
     },
+    "manifest": "https://github.com/Arga-Mods/argas-benny-and-wound-panel-swade/releases/latest/download/module.json",
+    "download": "https://github.com/Arga-Mods/argas-benny-and-wound-panel-swade/releases/download/13.0.1/module.zip",
     "esmodules": [
         "scripts/settings.js",
         "scripts/panel.js"
