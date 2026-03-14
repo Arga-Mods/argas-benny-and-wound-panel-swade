@@ -12,7 +12,7 @@ on selected tokens without ever opening a character sheet. The module automatica
   <img src="screenshots/benny-panel_dock.png" alt="docked widget" width="250">
 </p>
 
----
+
 
 ## Moving the Widget
 
@@ -24,7 +24,7 @@ Outside of dock zones, the widget will snap to the hotbar, the sidebar, or the e
 
 If **Arga's Day-Night Slider** is also installed, the slider becomes an additional docking point (see below).
 
----
+
 
 ## Minimizing the Widget
 
@@ -36,22 +36,25 @@ Double-click any of the three icons (Bennies, Wounds, Fatigue) to collapse the w
 
 The compact icon remembers its own position separately from the widget. If you are short on space, the compact icon can also be displayed vertically — toggle this in the module settings.
 
----
+
 
 ## Settings & Appearance
 
 The widget automatically adapts to UI scaling, the faded-UI setting, and light or dark interface themes. Beyond that, a number of options can be configured in the Game Settings, including whether chat messages should be detailed, brief, or turned off entirely. Disabling chat output is a GM-only setting.
 
----
+
 
 ## Languages
 
 The module is currently available in English and German.
 
----
+
 
 ## Compatibility with Other Modules
 
 - **Arga's Day-Night Slider** — The two widgets dock to each other and move together when a shared docking point expands (e.g. the Scene Navigation Bar).
 - **Dice So Nice** — Spending and receiving Bennies triggers a DSN dice animation.
 
+---
+
+*Enjoy — Arga*
