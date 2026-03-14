@@ -9,7 +9,7 @@ A floating widget for Savage Worlds Adventure Edition (SWADE) that lets you adju
 on selected tokens without ever opening a character sheet. The module automatically detects the token type (character, NPC, group, vehicle) and adjusts the available controls accordingly.
 
 <p align="center">
-  <img src="screenshots/benny-panel_dock.png" alt="docked widget" width="250">
+  <img src="screenshots/benny-panel_dock.png" alt="docked widget" width="200">
 </p>
 
 
@@ -31,7 +31,7 @@ If **Arga's Day-Night Slider** is also installed, the slider becomes an addition
 Double-click any of the three icons (Bennies, Wounds, Fatigue) to collapse the widget into a small compact icon. The compact icon can be dragged around independently with the right mouse button, and double-clicking it restores the full widget.
 
 <p align="center">
-  <img src="screenshots/benny-panel_compact.png" alt="compact icon" width="250">
+  <img src="screenshots/benny-panel_compact.png" alt="compact icon" width="200">
 </p>
 
 The compact icon remembers its own position separately from the widget. If you are short on space, the compact icon can also be displayed vertically — toggle this in the module settings.
