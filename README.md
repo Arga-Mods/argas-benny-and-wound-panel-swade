@@ -1,4 +1,4 @@
-# Arga's Benny & Wound Panel (Foundry VTT, Version 13)
+# Arga's Benny & Wound Panel (Foundry VTT, v13)
 
 A floating widget for Savage Worlds Adventure Edition (SWADE) that lets you adjust
 
