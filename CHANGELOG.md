@@ -1,5 +1,5 @@
 # Changelog
-## 14.0.2https://github.com/Arga-Mods/argas-benny-and-wound-panel-swade/blob/main/CHANGELOG.md
+## 14.0.2
 - Ensured full compatibility with Foundry VTT v14 and SWADE v6
 - Fixed: Clicking a panel button while no scene is active no longer triggers an error
 - Improved: Players attempting to modify tokens that aren't theirs now receive a clear notification
