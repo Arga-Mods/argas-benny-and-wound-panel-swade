@@ -21,6 +21,7 @@
   "ARGAS_BENNY_WOUND.CHAT.NO_BENNY_SUPPORT": "The actor type of {actorName} does not support bennies.",
   "ARGAS_BENNY_WOUND.CHAT.NO_FATIGUE_SUPPORT": "The actor type of {actorName} does not support fatigue.",
   "ARGAS_BENNY_WOUND.CHAT.NO_WOUND_SUPPORT": "The actor type of {actorName} does not support wounds.",
+  "ARGAS_BENNY_WOUND.CHAT.NO_PERMISSION": "You do not have permission to modify tokens that are not yours.",
   "ARGAS_BENNY_WOUND.CHAT.NO_BENNIES_LEFT": "<span style=\"color:red\">Not possible!</span> {actorName} has no more bennies to spend.",
   "ARGAS_BENNY_WOUND.CHAT.NO_WOUNDS_LEFT": "<span style=\"color:red\">Not possible!</span> {actorName} is already fully healed and cannot lose any more wounds.",
   "ARGAS_BENNY_WOUND.CHAT.ALREADY_HEALED": "<span style=\"color:red\">Not possible!</span> {actorName} is already fully healed.",

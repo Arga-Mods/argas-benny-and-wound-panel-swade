@@ -28,6 +28,8 @@ let _iconPreSidebarX = null; // Merkt sich die Icon-Position vor dem Sidebar-Pus
 /**
  * Wendet die iconVertical-Einstellung auf das Collapse-Icon an.
  * Tauscht Bildquelle und Dimensionen – kein Reload nötig.
+ * Wird beim Init aufgerufen und bei jeder Änderung der Einstellung
+ * (Event 'argas-benny:iconVerticalChanged' aus settings.js).
  */
 function applyIconVertical() {
   if (!iconImg) return;
@@ -160,18 +162,15 @@ function clampToViewport(x, y) {
 
 function getSnapTargets() {
   const targets = [];
-  // IDs der Dock-Anker ausschließen – ihre Positionierung wird über die Dock-Logik gehandhabt.
-  const dockIds = new Set([
-    'players', 'players-active', 'players-inactive',
-    'scene-navigation', 'scene-navigation-active', 'scene-navigation-inactive'
-  ]);
 
   document.querySelectorAll('.window-app').forEach(el => {
     if (el.style.display === 'none') return;
     targets.push(el.getBoundingClientRect());
   });
-  for (const id of ['sidebar', 'hotbar', 'scene-navigation', 'controls', 'players']) {
-    if (dockIds.has(id)) continue;
+  // Players und Scene-Navigation sind hier bewusst NICHT aufgeführt:
+  // An diese beiden Elemente dockt das Panel über die Dock-Logik an;
+  // ein zusätzliches Einrasten würde mit dem Andocken kollidieren.
+  for (const id of ['sidebar', 'hotbar', 'controls']) {
     const el = document.getElementById(id);
     if (el) targets.push(el.getBoundingClientRect());
   }
@@ -476,7 +475,7 @@ function initPanel() {
   uiContainer = document.createElement('div');
   uiContainer.id = UI_ID;
   uiContainer.classList.add('faded-ui');
-  uiContainer.style.position    = 'fixed';
+  // position: fixed wird über style.css (#argas-panel-ui) gesetzt.
   uiContainer.style.touchAction = 'none';
   uiContainer.style.minWidth    = 'max-content';
 
@@ -978,7 +977,6 @@ function initPanel() {
   };
 
   Hooks.on('renderPlayers', handleDockTargetChange);
-  Hooks.on('renderPlayerList', handleDockTargetChange);
 
 
 
@@ -1130,6 +1128,24 @@ function initPanel() {
     expandPanel();
   });
 
+  // Linke Maustaste: Zeigefinger-Cursor statt Greifhand.
+  // Die linke Taste öffnet das Panel per Doppelklick, sie kann das Icon
+  // nicht greifen/ziehen – der pointer-Cursor passt daher besser als grab.
+  iconElement.addEventListener('pointerdown', (e) => {
+    if (e.button !== 0) return;
+    iconElement.style.cursor = 'pointer';
+  });
+  iconElement.addEventListener('pointerup', (e) => {
+    if (e.button !== 0) return;
+    iconElement.style.cursor = '';
+  });
+  iconElement.addEventListener('pointerleave', () => {
+    // Sicherheitsnetz: nur den Zeigefinger-Cursor zurücksetzen.
+    // Den Greif-Cursor (grabbing) eines laufenden Rechtsklick-Ziehens
+    // bewusst NICHT anfassen.
+    if (iconElement.style.cursor === 'pointer') iconElement.style.cursor = '';
+  });
+
   // Icon-Drag (rechte Maustaste) mit Snap- und Dock-Logik.
   {
     let _iconOffX = 0, _iconOffY = 0, _iconDragging = false, _iconCurrentZone = null;
@@ -1208,6 +1224,21 @@ function initPanel() {
   }
 
   // ----------------------------------------------------------------
+  //  iconVertical-Einstellung live umschalten (ohne Reload)
+  // ----------------------------------------------------------------
+  // settings.js feuert dieses Event, sobald die Einstellung geändert wird.
+  window.addEventListener('argas-benny:iconVerticalChanged', () => {
+    applyIconVertical();
+    // Falls das Icon gerade sichtbar und gedockt ist: Position nachziehen,
+    // da sich durch die Drehung die Icon-Maße ändern (72×32 ↔ 32×72).
+    if (isCollapsed) {
+      let iconTarget = 'none';
+      try { iconTarget = game.settings.get(MODULE_ID, 'iconDockTarget'); } catch (_) {}
+      if (iconTarget !== 'none') syncIconPosition(iconTarget);
+    }
+  });
+
+  // ----------------------------------------------------------------
   //  Initialer Zustand: War das Panel beim letzten Reload kollabiert?
   // ----------------------------------------------------------------
   {
@@ -1225,16 +1256,25 @@ function initPanel() {
 /* ------------------------------------------------------------------ */
 
 /** Gibt alle Actors der aktuell kontrollierten Token zurück.
- *  Zeigt eine Warnung und gibt [] zurück, wenn kein Token ausgewählt ist. */
+ *  - Warnt und gibt [] zurück, wenn kein Token ausgewählt ist (oder keine Szene aktiv).
+ *  - Filtert Akteure heraus, die der aktuelle Benutzer nicht verändern darf,
+ *    und zeigt dafür einen freundlichen Hinweis statt eines Foundry-Fehlers. */
 function getActors() {
-  const actors = canvas.tokens.controlled
+  // canvas?.tokens?.controlled: leere Liste, falls gerade keine Szene aktiv ist.
+  const actors = (canvas?.tokens?.controlled ?? [])
     .map(t => t.actor)
     .filter(Boolean);
   if (actors.length === 0) {
     ui.notifications.warn(game.i18n.localize('ARGAS_BENNY_WOUND.CHAT.NO_TOKEN_SELECTED'));
     return [];
   }
-  return actors;
+  // Nur Akteure zurückgeben, die der aktuelle Benutzer auch verändern darf.
+  const editable = actors.filter(a => a.isOwner);
+  if (editable.length < actors.length) {
+    // Mindestens ein fremdes Token war ausgewählt: eine Sammelmeldung.
+    ui.notifications.warn(game.i18n.localize('ARGAS_BENNY_WOUND.CHAT.NO_PERMISSION'));
+  }
+  return editable;
 }
 
 /** Gibt den Actor-Namen als fetten Großbuchstaben-String für Chat-Nachrichten zurück. */

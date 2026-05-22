@@ -81,14 +81,13 @@
 #argas-panel-collapse-icon {
   position: fixed;
   z-index: 100;
+  /* Standard-Cursor (Hover): offene Greifhand – signalisiert "verschiebbar".
+     Beim Drücken wird der Cursor per JS (panel.js) tastenabhängig gesetzt:
+     rechte Maustaste = grabbing (greifen/ziehen), linke = pointer (öffnen). */
   cursor: grab;
   user-select: none;
   display: none;
   filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
-}
-
-#argas-panel-collapse-icon:active {
-  cursor: grabbing;
 }
 
 #argas-panel-collapse-icon:hover {

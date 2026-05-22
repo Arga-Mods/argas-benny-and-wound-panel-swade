@@ -41,7 +41,12 @@ Hooks.once('init', () => {
     scope: 'client',
     config: true,
     default: false,
-    type: Boolean
+    type: Boolean,
+    onChange: () => {
+      // Live-Umschaltung ohne Reload: panel.js hört auf dieses Event
+      // und tauscht Bild und Maße des Kompakt-Symbols sofort aus.
+      window.dispatchEvent(new CustomEvent('argas-benny:iconVerticalChanged'));
+    }
   });
 
   // 5. Zeigt Wundenänderungen im Chat an.
@@ -134,7 +139,6 @@ Hooks.once('init', () => {
 });
 
 let oldDisabledSetting  = null;
-let oldIconVertical     = null;
 let oldResetPanel       = null;
 
 // Dieser Hook wird aufgerufen, wenn die Einstellungen (SettingsConfig) gerendert werden.
@@ -166,10 +170,6 @@ Hooks.on('renderSettingsConfig', (app, html) => {
   const resetPanelInput = el.querySelector(`input[name="${MODULE_ID}.resetPanelPosition"]`);
   oldResetPanel = resetPanelInput?.checked ?? null;
 
-  // Aktuellen Stand der "iconVertical"-Einstellung speichern.
-  const iconVerticalInput = el.querySelector(`input[name="${MODULE_ID}.iconVertical"]`);
-  oldIconVertical = iconVerticalInput?.checked ?? null;
-
   // "showBennyMessages" deaktivieren, da systemseitig gesteuert.
   const bennyInput = el.querySelector(`input[name="${MODULE_ID}.showBennyMessages"]`);
   if (bennyInput) bennyInput.disabled = true;
@@ -180,31 +180,15 @@ Hooks.on('renderSettingsConfig', (app, html) => {
 Hooks.on('closeSettingsConfig', () => {
   const newDisabled      = game.settings.get(MODULE_ID, 'disabledLocally');
   const newResetPanel    = game.settings.get(MODULE_ID, 'resetPanelPosition');
-  const newIconVertical  = game.settings.get(MODULE_ID, 'iconVertical');
 
   const needsReload =
     (oldDisabledSetting   !== null && oldDisabledSetting   !== newDisabled)    ||
-    (oldResetPanel        !== null && oldResetPanel         !== newResetPanel)  ||
-    (oldIconVertical      !== null && oldIconVertical       !== newIconVertical);
+    (oldResetPanel        !== null && oldResetPanel         !== newResetPanel);
   if (needsReload) {
-    const DialogClass = foundry.applications?.api?.DialogV2;
-    if (DialogClass) {
-      DialogClass.confirm({
-        window: { title: game.i18n.localize('ARGAS_BENNY_WOUND.DIALOG.RELOAD_TITLE') },
-        content: `<p>${game.i18n.localize('ARGAS_BENNY_WOUND.DIALOG.RELOAD_CONTENT')}</p>`,
-        yes: { callback: () => window.location.reload() }
-      });
-    } else {
-      // Fallback auf Legacy Dialog (sollte in v13+ nicht nötig sein).
-      new Dialog({
-        title: game.i18n.localize('ARGAS_BENNY_WOUND.DIALOG.RELOAD_TITLE'),
-        content: `<p>${game.i18n.localize('ARGAS_BENNY_WOUND.DIALOG.RELOAD_CONTENT')}</p>`,
-        buttons: {
-          yes: { label: game.i18n.localize('Yes'), callback: () => window.location.reload() },
-          no:  { label: game.i18n.localize('No') }
-        },
-        default: 'yes'
-      }).render(true);
-    }
+    foundry.applications.api.DialogV2.confirm({
+      window: { title: game.i18n.localize('ARGAS_BENNY_WOUND.DIALOG.RELOAD_TITLE') },
+      content: `<p>${game.i18n.localize('ARGAS_BENNY_WOUND.DIALOG.RELOAD_CONTENT')}</p>`,
+      yes: { callback: () => window.location.reload() }
+    });
   }
 });
