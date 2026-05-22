@@ -69,4 +69,7 @@ The module is currently available in English and German.
 
 - **Arga's Day-Night Slider** — The two widgets dock to each other and move together when a shared docking point expands (e.g. the Scene Navigation Bar).
 - **Dice So Nice** — Spending and receiving Bennies triggers a DSN dice animation.
+  
+---
 
+<p align="center"><em>Enjoy — Arga</em></p>
