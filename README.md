@@ -1,4 +1,13 @@
-# Arga's Benny & Wound Panel (Foundry VTT, v13)
+<p align="center">
+  <img src="https://img.shields.io/endpoint?url=https://foundryshields.com/version?url=https://raw.githubusercontent.com/Arga-Mods/argas-benny-and-wound-panel-swade/main/module.json" alt="Foundry Version">
+  <a href="https://github.com/Arga-Mods/argas-benny-and-wound-panel-swade/releases/latest"><img src="https://img.shields.io/github/v/release/Arga-Mods/argas-benny-and-wound-panel-swade?display_name=tag&sort=semver&label=Latest%20Release&color=4287f5" alt="Latest Release"></a>
+  <a href="https://forge-vtt.com/bazaar#package=argas-benny-and-wound-panel-swade"><img src="https://img.shields.io/badge/dynamic/json?label=Forge%20Installs&query=package.installs&suffix=%25&url=https://forge-vtt.com/api/bazaar/package/argas-benny-and-wound-panel-swade&colorB=4aa94a" alt="Forge Installs"></a>
+  <a href="https://github.com/Arga-Mods/argas-benny-and-wound-panel-swade/releases"><img src="https://img.shields.io/github/downloads/Arga-Mods/argas-benny-and-wound-panel-swade/total?label=Downloads%20%28Total%29&color=4aa94a" alt="Downloads Total"></a>
+  <a href="https://github.com/Arga-Mods/argas-benny-and-wound-panel-swade/releases/latest"><img src="https://img.shields.io/github/downloads/Arga-Mods/argas-benny-and-wound-panel-swade/latest/total?label=Downloads%20%28Latest%29&color=f5a623" alt="Downloads Latest"></a>
+</p>
+
+
+# Arga's Benny & Wound Panel [SWADE]
 
 A floating widget for Savage Worlds Adventure Edition (SWADE) that lets you adjust
 
@@ -12,7 +21,7 @@ on selected tokens without ever opening a character sheet. The module automatica
   <img src="screenshots/benny-panel_dock.png" alt="docked widget" width="200">
 </p>
 
-
+---
 
 ## Moving the Widget
 
@@ -24,7 +33,7 @@ Outside of dock zones, the widget will snap to the hotbar, the sidebar, or the e
 
 If **Arga's Day-Night Slider** is also installed, the slider becomes an additional docking point (see below).
 
-
+---
 
 ## Minimizing the Widget
 
@@ -36,25 +45,28 @@ Double-click any of the three icons (Bennies, Wounds, Fatigue) to collapse the w
 
 The compact icon remembers its own position separately from the widget. If you are short on space, the compact icon can also be displayed vertically — toggle this in the module settings.
 
-
+---
 
 ## Settings & Appearance
 
 The widget automatically adapts to UI scaling, the faded-UI setting, and light or dark interface themes. Beyond that, a number of options can be configured in the Game Settings, including whether chat messages should be detailed, brief, or turned off entirely. Disabling chat output is a GM-only setting.
 
+<p align="center">
+  <img src="screenshots/benny-panel_simple.png" alt="Simple Chat Message" width="300">
+  &nbsp;&nbsp;<em>or</em>&nbsp;&nbsp;
+  <img src="screenshots/benny-panel_detailed.png" alt="Detailed Chat Message" width="300">
+</p>
 
+---
 
 ## Languages
 
 The module is currently available in English and German.
 
-
+---
 
 ## Compatibility with Other Modules
 
 - **Arga's Day-Night Slider** — The two widgets dock to each other and move together when a shared docking point expands (e.g. the Scene Navigation Bar).
 - **Dice So Nice** — Spending and receiving Bennies triggers a DSN dice animation.
 
----
-
-*Enjoy — Arga*
