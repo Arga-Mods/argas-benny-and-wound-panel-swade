@@ -1,26 +1,21 @@
 # Changelog
-## 14.0.1
-- Ensured full compatibility with Foundry VTT v14
-- Fixed: The `argas:widgetMoved` synchronization listener is now properly removed on every scene change instead of being registered repeatedly
+## 14.0.2
+- Ensured full compatibility with Foundry VTT v14 and SWADE v6
+- Fixed: Clicking a panel button while no scene is active no longer triggers an error
+- Improved: Players attempting to modify tokens that aren't theirs now receive a clear notification
+- Improved: The compact icon now switches between horizontal and vertical orientation instantly, without requiring a reload
+- Improved: Left-clicking the compact icon now shows a pointer cursor instead of a grab cursor, distinguishing it from right-click dragging
 - Improved: Cleaned up ineffective CSS
-## 13.0.3
-- Added: Cross-module docking support with Arga's Benny & Wound Panel via the window.ArgasMods registry and argas:widgetMoved CustomEvent
-- Fixed: Scene Navigation docking now uses a MutationObserver instead of ResizeObserver, fixing an issue where the widget position was not updated when the navigation was collapsed or expanded
-- Improved: Players pin zone extended to the left and bottom screen edges for more reliable docking
-## 13.0.2
-- Fixed: Widget now always stays fully within the viewport and shifts correctly when the Sidebar opens or closes
-- Added: `faded-ui` support — the widget now respects Foundry's Inactive Opacity and Fade Speed settings
-- Added: Right-click anywhere on the widget to drag it (in addition to the handle)
-- Added: Viewport clamping — the widget can no longer be dragged outside the browser window
-- Added: Snap target caching for improved performance during drag
-- Improved: Snap lines adjusted for more accurate snapping behavior
 ## 13.0.1
 - Initial release
-- Floating slider for adjusting scene darkness level
+- Floating panel for quick adjustment of Bennies, Wounds, and Fatigue on selected tokens
+- Multi-token support — apply changes to several selected tokens at once
 - Drag & snap to Sidebar, Hotbar, Navigation, screen edges, and open Foundry windows
-- Docking to the Players window with wiggle animation feedback
-- Mouse wheel support (scroll ±1%, Shift ±5%, Ctrl ±0.3%)
-- Click Sun icon to set full daylight, Moon icon to set full darkness
-- Double-click handle to snap back to Players window
+- Docking to the Players window and Scene Navigation, with independent docking for the compact icon
+- Collapsible compact mode with a draggable icon
+- Chat output for Wounds, Fatigue, and Bennies, including vehicle-specific wound messages
+- Simple chat message mode for short notifications without the detailed explanatory text
+- Dice So Nice support for the Benny throw animation
+- `faded-ui` support — respects Foundry's Inactive Opacity and Fade Speed settings
 - UI scale support via Foundry's `--ui-scale` CSS variable
-- Position persistence across sessions
+- German and English localization
