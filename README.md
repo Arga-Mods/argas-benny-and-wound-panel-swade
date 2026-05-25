@@ -21,8 +21,6 @@ on selected tokens without ever opening a character sheet. The module automatica
   <img src="screenshots/benny-panel_dock.png" alt="docked widget" width="200">
 </p>
 
----
-
 ## Moving the Widget
 
 Grab the widget with the right mouse button and drag it wherever you like. Its position is saved and restored on reload.
@@ -33,7 +31,6 @@ Outside of dock zones, the widget will snap to the hotbar, the sidebar, or the e
 
 If **Arga's Day-Night Slider** is also installed, the slider becomes an additional docking point (see below).
 
----
 
 ## Minimizing the Widget
 
@@ -45,7 +42,6 @@ Double-click any of the three icons (Bennies, Wounds, Fatigue) to collapse the w
 
 The compact icon remembers its own position separately from the widget. If you are short on space, the compact icon can also be displayed vertically — toggle this in the module settings.
 
----
 
 ## Settings & Appearance
 
@@ -57,13 +53,9 @@ The widget automatically adapts to UI scaling, the faded-UI setting, and light o
   <img src="screenshots/benny-panel_detailed.png" alt="Detailed Chat Message" width="300">
 </p>
 
----
-
 ## Languages
 
 The module is currently available in English and German.
-
----
 
 ## Compatibility with Other Modules
 
