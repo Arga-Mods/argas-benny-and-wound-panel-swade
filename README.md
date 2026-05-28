@@ -31,6 +31,7 @@ Outside of dock zones, the widget will snap to the hotbar, the sidebar, or the e
 
 If **Arga's Day-Night Slider** is also installed, the slider becomes an additional docking point (see below).
 
+<br>
 
 ## Minimizing the Widget
 
@@ -41,7 +42,6 @@ Double-click any of the three icons (Bennies, Wounds, Fatigue) to collapse the w
 </p>
 
 The compact icon remembers its own position separately from the widget. If you are short on space, the compact icon can also be displayed vertically — toggle this in the module settings.
-
 
 ## Settings & Appearance
 
@@ -62,6 +62,14 @@ The module is currently available in English and German.
 - **Arga's Day-Night Slider** — The two widgets dock to each other and move together when a shared docking point expands (e.g. the Scene Navigation Bar).
 - **Dice So Nice** — Spending and receiving Bennies triggers a DSN dice animation.
   
+---
+
+## My Other Modules
+If you like ***Arga's Benny & Wound Panel [SWADE]***, feel free to check out my other modules as well:
+
+* **[Arga's Day-Night Slider](https://github.com/Arga-Mods/argas-day-night-slider)** – A slider for a smooth day/night transition in your scenes.
+* **[Arga's Dice Roller](https://github.com/Arga-Mods/argas-dice-roller)** – A system-agnostic dice module with a Fate Roll function and additional features and dice mechanics for the **Savage Worlds Adventure Edition (SWADE)** game system, such as Critical Failures, Benny rerolls, Request Rolls, and Dramatic Tasks.
+
 ---
 
 <p align="center"><em>Enjoy — Arga</em></p>
