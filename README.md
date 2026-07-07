@@ -60,7 +60,10 @@ The module is currently available in English and German.
 
 - **Arga's Day-Night Slider** — The two widgets dock to each other and move together when a shared docking point expands (e.g. the Scene Navigation Bar).
 - **Dice So Nice** — Spending and receiving Bennies triggers a DSN dice animation.
-  
+
+## Manifest-URL
+https://github.com/Arga-Mods/argas-benny-and-wound-panel-swade/releases/latest/download/module.json
+
 ---
 
 ## My Other Modules
@@ -68,6 +71,7 @@ If you like ***Arga's Benny & Wound Panel [SWADE]***, feel free to check out my 
 
 * **[Arga's Day-Night Slider](https://github.com/Arga-Mods/argas-day-night-slider)** – A slider for a smooth day/night transition in your scenes.
 * **[Arga's Dice Roller](https://github.com/Arga-Mods/argas-dice-roller)** – A system-agnostic dice module with a Fate Roll function and additional features and dice mechanics for the **Savage Worlds Adventure Edition (SWADE)** game system, such as Critical Failures, Benny rerolls, Request Rolls, and Dramatic Tasks.
+* **[Arga's SWADE Translation (German)](https://github.com/Arga-Mods/argas-swade-translation-german)** - A complete German translation of the English ***SWADE Core Rules*** premium module.
 
 ---
 
