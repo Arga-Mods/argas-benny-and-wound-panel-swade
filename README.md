@@ -18,6 +18,7 @@ on selected tokens without ever opening a character sheet. The module automatica
   <img src="screenshots/benny-panel_dock.png" alt="docked widget" width="200">
 </p>
 
+
 ## Moving the Widget
 
 Grab the widget with the right mouse button and drag it wherever you like. Its position is saved and restored on reload.
@@ -40,6 +41,8 @@ Double-click any of the three icons (Bennies, Wounds, Fatigue) to collapse the w
 
 The compact icon remembers its own position separately from the widget. If you are short on space, the compact icon can also be displayed vertically — toggle this in the module settings.
 
+<br>
+
 ## Settings & Appearance
 
 The widget automatically adapts to UI scaling, the faded-UI setting, and light or dark interface themes. Beyond that, a number of options can be configured in the Game Settings, including whether chat messages should be detailed, brief, or turned off entirely. Disabling chat output is a GM-only setting.
@@ -50,17 +53,28 @@ The widget automatically adapts to UI scaling, the faded-UI setting, and light o
   <img src="screenshots/benny-panel_detailed.png" alt="Detailed Chat Message" width="300">
 </p>
 
+<br>
+
 ## Languages
 
 The module is currently available in English and German.
+
+<br>
 
 ## Compatibility with Other Modules
 
 - **Arga's Day-Night Slider** — The two widgets dock to each other and move together when a shared docking point expands (e.g. the Scene Navigation Bar).
 - **Dice So Nice** — Spending and receiving Bennies triggers a DSN dice animation.
 
+<br>
+
 ## Manifest-URL
 https://github.com/Arga-Mods/argas-benny-and-wound-panel-swade/releases/latest/download/module.json
+
+## FoundryVTT.com
+https://foundryvtt.com/packages/argas-benny-and-wound-panel-swade
+
+<br>
 
 ---
 
@@ -69,6 +83,7 @@ If you like ***Arga's Benny & Wound Panel [SWADE]***, feel free to check out my 
 
 * **[Arga's Day-Night Slider](https://github.com/Arga-Mods/argas-day-night-slider)** – A slider for a smooth day/night transition in your scenes.
 * **[Arga's Dice Roller](https://github.com/Arga-Mods/argas-dice-roller)** – A system-agnostic dice module with a Fate Roll function and additional features and dice mechanics for the **Savage Worlds Adventure Edition (SWADE)** game system, such as Critical Failures, Benny rerolls, Request Rolls, and Dramatic Tasks.
+* **[Arga's SWADE SciFi Companion (German)](https://github.com/Arga-Mods/argas-swade-scifi-companion-german)** - A complete German translation of the English ***SWADE Science Fiction Companion*** premium module.
 * **[Arga's SWADE Translation (German)](https://github.com/Arga-Mods/argas-swade-translation-german)** - A complete German translation of the English ***SWADE Core Rules*** premium module.
 
 ---
